@@ -4,8 +4,6 @@ using CodingTestWalley.Vehicles;
 namespace CodingTestWalley;
 public class TollCalculator
 {
-    //private readonly TollDateHelpers tolldateHelper = new();
-    
     /**
      * Calculate the total toll fee for one day
      *
@@ -66,8 +64,10 @@ public class TollCalculator
             return 8;
         if (timeOfDay < new TimeSpan(7, 0, 0))
             return 13;
-        if (timeOfDay < new TimeSpan(8, 30, 0))
+        if (timeOfDay < new TimeSpan(8, 00, 0))
             return 18;
+        if (timeOfDay < new TimeSpan(8, 30, 0))
+            return 13;
         if (timeOfDay < new TimeSpan(15, 0, 0))
             return 8;
         if (timeOfDay < new TimeSpan(15, 30, 0))
