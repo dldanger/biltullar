@@ -55,7 +55,7 @@ public static class TollDateHelpers
 
     private static bool IsEasterRelatedTollFreeDay(DateTime dateToCheck)
     {
-        if (dateToCheck.Year != _currentYear || _easterTollFreeDays == default)
+        if (dateToCheck.Year != _currentYear || _easterTollFreeDays == Array.Empty<DateTime>())
             CalculateEasterRelatedTollFreeDates(dateToCheck.Year);
         
         return _easterTollFreeDays.Contains(dateToCheck.Date);
