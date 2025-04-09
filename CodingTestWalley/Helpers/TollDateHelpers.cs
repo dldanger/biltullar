@@ -22,9 +22,9 @@ public static class TollDateHelpers
         if (dateToCheck.Month is 7)
             return true;
 
-        var monthHasFixedTollFreeDays = _fixedTollFreeDays.TryGetValue(dateToCheck.Month, out var fixedTollFreeDays);
+        var isMonthWithFixedTollFreeDays = _fixedTollFreeDays.TryGetValue(dateToCheck.Month, out var fixedTollFreeDays);
 
-        if (monthHasFixedTollFreeDays && fixedTollFreeDays.Contains(dateToCheck.Day))
+        if (isMonthWithFixedTollFreeDays && fixedTollFreeDays.Contains(dateToCheck.Day))
             return true;
 
         var isFriday = dateToCheck.DayOfWeek is DayOfWeek.Friday;
