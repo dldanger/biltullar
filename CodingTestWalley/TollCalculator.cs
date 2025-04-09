@@ -88,6 +88,6 @@ public class TollCalculator
             return false;
 
         var vehicleType = vehicle.GetVehicleType();
-        return Enum.TryParse(vehicleType, out TollFreeVehicles _);
+        return Enum.TryParse<TollFreeVehicles>(vehicleType, out var _);
     }
 }
